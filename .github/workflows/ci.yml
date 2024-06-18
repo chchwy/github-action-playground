@@ -18,10 +18,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Set up environment
+      id: setup-env
       uses: ./.github/actions/setup-env
     - name: Build
       shell: bash
-      run: echo "Build project"
+      run: echo "Branch Name is ${{ steps.setup-env.outputs.BRANCH_NAME }}"
     - name: Test
       shell: bash
       run: echo "Run tests"
