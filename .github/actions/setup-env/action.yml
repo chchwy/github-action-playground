@@ -10,4 +10,4 @@ runs:
     shell: bash
     env:
       IS_RELEASE: ${{ startsWith(github.ref, 'refs/heads/release/') }}
-      BRANCH_NAME: ${{ github.ref }}
+      #BRANCH_NAME: ${{ github.ref }}
