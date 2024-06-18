@@ -9,5 +9,5 @@ echo "BRANCH_NAME=${GITHUB_REF_NAME}" >> $GITHUB_OUTPUT
 
 # I want to access the environment variable in the same script
 # set environment variable 
-export BRANCH_NAME=${GITHUB_REF_NAME}
-echo "BRANCH_NAME is ${BRANCH_NAME}"
+#export BRANCH_NAME=${GITHUB_REF_NAME}
+#echo "BRANCH_NAME is ${BRANCH_NAME}"
