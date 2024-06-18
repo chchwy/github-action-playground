@@ -24,7 +24,7 @@ jobs:
       shell: bash
       env:
           OUTPUT_BRANCH_NAME: ${{ steps.setupenv.outputs.BRANCH_NAME }}
-      run: echo "Output is $OUTPUT_BRANCH_NAME, ${{ env.BRANCH_NAME }}"
+      run: echo "Output is ${{ env.OUTPUT_BRANCH_NAME }}, ${{ env.BRANCH_NAME }}"
     - name: Test
       shell: bash
       run: echo "Run tests"
