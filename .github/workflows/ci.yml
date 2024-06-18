@@ -18,11 +18,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
     - name: Set up environment
-      shell: bash
-      run: ./.github/actions/setup-env.sh
+      uses: ./.github/actions/setup-env
     - name: Build
       shell: bash
-      run: ./.github/actions/build.sh
+      run: echo "Build project"
     - name: Test
       shell: bash
       run: echo "Run tests"

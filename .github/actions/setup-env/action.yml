@@ -1,0 +1,13 @@
+name: Set up environment
+inputs:
+  arch:
+    description: Architecture
+    required: true
+runs:
+  using: composite
+  steps:
+  - run: ${GITHUB_ACTION_PATH}/setup-env.sh
+    shell: bash
+    env:
+      IS_RELEASE: ${{ startsWith(github.ref, 'refs/heads/release/') }}
+      BRANCH_NAME: ${{ github.ref }}
