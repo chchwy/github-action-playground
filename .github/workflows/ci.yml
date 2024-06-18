@@ -1,0 +1,28 @@
+name: Build & Tests
+
+on:
+  push:
+    paths-ignore:
+    - '**.md'
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Set up environment
+      shell: bash
+      run: ./.github/actions/setup-env.sh
+    - name: Build
+      shell: bash
+      run: ./.github/actions/build.sh
+    - name: Test
+      shell: bash
+      run: echo "Run tests"
